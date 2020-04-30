@@ -121,4 +121,6 @@ dmypy.json
 #virtualenv
 venv/
 
+.vscode/
+
 # End of https://www.gitignore.io/api/django
