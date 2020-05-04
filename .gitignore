@@ -89,6 +89,9 @@ target/
 #   install all needed dependencies.
 #Pipfile.lock
 
+#virtualenv
+venv/
+
 # celery beat schedule file
 celerybeat-schedule
 
@@ -118,9 +121,14 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-#virtualenv
-venv/
 
+
+# IDEs
 .vscode/
+
+# Node modules
+node_modules/
+yarn.lock
+npm-debug.log
 
 # End of https://www.gitignore.io/api/django
