@@ -6,5 +6,6 @@ router = routers.DefaultRouter()
 router.register('languages', views.LanguageView)
 
 urlpatterns = [
+    path('', include('frontend.urls')),
     path('', include(router.urls))
 ]
