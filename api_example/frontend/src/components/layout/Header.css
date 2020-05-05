@@ -1,0 +1,10 @@
+.navbar {
+    font-family: "Segoe UI", "Source Sans Pro", 
+    Calibri, Candara, Arial, sans-serif;
+    background-color: #E9EAED;
+    border-bottom: 1px solid black;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: rgb(0,0,0);
+  } 
