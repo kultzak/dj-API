@@ -1,3 +1,9 @@
+body {
+    background: #f3f3f3;
+}
+
+/* css of .CrossWords */
+
 .container {
     height: 100%;
     display: flex;
@@ -7,4 +13,68 @@
 
 .CrossWords {
     padding-top: 20px;
+}
+
+.crossword {
+    /* height: 100%; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.grid {
+    flex: 2 1 20% !important;
+}
+
+.clues {
+    display: flex;
+    /* min-width: 500px; */
+}
+
+.clues .direction:first-of-type{
+    /* background: greenyellow; */
+    /* min-width: 60%; */
+    flex: 1 2 50%;
+    padding-right: 10px;
+}
+
+.clues .direction:nth-of-type(2){
+    /* background: grey; */
+    /* float: right; */
+    flex: 1 2 50%;
+    padding-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .clues {
+        flex-direction: column;
+    }
+}
+
+
+
+.direction:first-of-type .header {
+    visibility: hidden;
+    position: relative;
+}
+
+.direction:first-of-type .header:after {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: 'HORIZONTAL';
+}
+
+.direction:nth-of-type(2) .header {
+    visibility: hidden;
+    position: relative;
+}
+
+.direction:nth-of-type(2) .header:after {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: 'VERTICAL';
 }
