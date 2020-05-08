@@ -11,16 +11,11 @@ body {
     justify-content: center;
 }
 
-.CrossWords {
-    padding-top: 20px;
+.crossword {
+    padding-top: 20px !important;
 }
 
-.crossword {
-    /* height: 100%; */
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-}
+/* Changes the clues title to horizontal and vertical and double-line it*/
 
 .grid {
     flex: 2 1 20% !important;
@@ -50,8 +45,6 @@ body {
         flex-direction: column;
     }
 }
-
-
 
 .direction:first-of-type .header {
     visibility: hidden;

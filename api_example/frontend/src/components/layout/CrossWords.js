@@ -263,9 +263,11 @@ const data = {
 
 
 export class CrossWords extends Component {
+
+
     render() {
         return (
-            <div className="CrossWords" style={{
+            <div style={{
                 width: '100%'
 
             }}>
@@ -281,8 +283,12 @@ export class CrossWords extends Component {
                     // highlightBackground="#f99"
                     onCorrect={(a, b, c) => {
                         console.log(a, b, c);
-                        alert('Opa, certinho.');
+                        alert('Opa, certos.');
                     }}
+                    onLoadedCorrect={(a, b, c) => {
+                        console.log(a, b, c);
+                    }}
+
                 />
             </div>
         )
