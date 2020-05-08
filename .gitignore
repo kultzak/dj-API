@@ -131,4 +131,7 @@ node_modules/
 yarn.lock
 npm-debug.log
 
+# the react-crossword github folder
+react-crossword/
+
 # End of https://www.gitignore.io/api/django

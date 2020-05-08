@@ -71,3 +71,13 @@ body {
     left: 0;
     content: 'VERTICAL';
 }
+
+/* .clue[data-direction=across]:nth-of-type(1) {
+    text-decoration: line-through;
+    color: rgba(216, 216, 216, 0.938);
+} */
+
+.taxado {
+    text-decoration: line-through;
+    color: rgba(216, 216, 216, 0.938);
+}
