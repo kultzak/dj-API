@@ -11,16 +11,11 @@ body {
     justify-content: center;
 }
 
-.CrossWords {
-    padding-top: 20px;
+.crossword {
+    padding-top: 20px !important;
 }
 
-.crossword {
-    /* height: 100%; */
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-}
+/* Changes the clues title to horizontal and vertical and double-line it*/
 
 .grid {
     flex: 2 1 20% !important;
@@ -51,8 +46,6 @@ body {
     }
 }
 
-
-
 .direction:first-of-type .header {
     visibility: hidden;
     position: relative;
@@ -77,4 +70,14 @@ body {
     top: 0;
     left: 0;
     content: 'VERTICAL';
+}
+
+/* .clue[data-direction=across]:nth-of-type(1) {
+    text-decoration: line-through;
+    color: rgba(216, 216, 216, 0.938);
+} */
+
+.taxado {
+    text-decoration: line-through;
+    color: rgba(216, 216, 216, 0.938);
 }

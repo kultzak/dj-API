@@ -263,9 +263,11 @@ const data = {
 
 
 export class CrossWords extends Component {
+
+
     render() {
         return (
-            <div className="CrossWords" style={{
+            <div style={{
                 width: '100%'
 
             }}>
@@ -280,14 +282,62 @@ export class CrossWords extends Component {
                     // focusBackground="#f00"
                     // highlightBackground="#f99"
                     onCorrect={(a, b, c) => {
-                        console.log(a, b, c);
-                        alert('Opa, certinho.');
+                        try {
+                            console.log(a, b, c);
+                            const direction = a;
+                            const number = b;
+                            const answer = c;
+                            data[a][b].clue = data[a][b].clue + "✅";
+                            alert(data[a][b].clue);
+                        } catch (error) {
+                            console.log(error)
+                        }
                     }}
+
+
+                    onLoadedCorrect={(a, b, c) => {
+                        console.log(a, b, c);
+                    }}
+
                 />
             </div>
         )
     }
 }
 
-export default CrossWords
+export default CrossWords;
 
+
+
+// // Example by dreamer01
+// // import React from "react";
+// // import Crossword from "@jaredreisinger/react-crossword";
+
+// // import { initialData } from "../utils/crossword";
+
+// function Crosswords() {
+//     const [data, setData] = React.useState(initialData);
+
+//     const onCorrect = (...values) => {
+//         try {
+//             const [direction, number, answer] = values;
+//             const newData = { ...data };
+//             newData[direction][number].clue = newData[direction][number].clue + " ✅";
+//             setData(newData);
+//         } catch (error) {
+//             console.log(error);
+//         }
+//     };
+
+//     return (
+//         <Crossword
+//             data={data}
+//             onCorrect={onCorrect}
+//             onLoadedCorrect={(a, b, c) => {
+//                 console.log(a, b, c);
+//             }}
+//         />
+//     );
+// }
+
+// export default Crosswords;
