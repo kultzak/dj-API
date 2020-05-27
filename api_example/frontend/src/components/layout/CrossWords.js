@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, useCallback, useRef, useState } from 'react';
 import Crossword from '@jaredreisinger/react-crossword';
-import './CrossWords.css'
+import './CrossWords.css';
+import styled from 'styled-components';
 
 const data = {
     across: {
@@ -261,83 +262,76 @@ const data = {
     },
 }
 
+const CrosswordWrapper = styled.div`
+  ${'' /* margin-top: 2em; */}
+  max-width: 500em;
+  /* and some fun making use of the defined class names */
+  .clue.correct {
+    ::before {
+      content: '\u2713'; /* a.k.a. checkmark: ✓ */
+      display: inline-block;
+      text-decoration: none;
+      color: rgb(100, 200, 100);
+      margin-right: 0.25em;
+    }
+    text-decoration: line-through;
+    color: rgb(130, 130, 130);
+  }
+`;
+
+const Messages = styled.pre`
+  background-color: rgb(230, 230, 230);
+  margin: 1em 0;
+  padding: 1em;
+`;
+
+
+
+
 
 export class CrossWords extends Component {
 
-
     render() {
+
         return (
             <div style={{
                 width: '100%'
 
             }}>
-                <Crossword
-                    data={data}
-                    // columnBreakpoint="9999px" # when to break the grid/clues
-                    // gridBackground="#acf"
-                    // cellBackground="#ffe"
-                    // cellBorder="#fca"
-                    // textColor="#fff"
-                    // numberColor="#9f9"
-                    // focusBackground="#f00"
-                    // highlightBackground="#f99"
-                    onCorrect={(a, b, c) => {
-                        try {
+                <CrosswordWrapper>
+                    <Crossword
+                        data={data}
+                        // columnBreakpoint="9999px" # when to break the grid/clues
+                        // gridBackground="#acf"
+                        // cellBackground="#ffe"
+                        // cellBorder="#fca"
+                        // textColor="#fff"
+                        // numberColor="#9f9"
+                        // focusBackground="#f00"
+                        // highlightBackground="#f99"
+                        // onCorrect={(a, b, c) => {
+                        //     try {
+                        //         console.log(a, b, c);
+                        //         const direction = a;
+                        //         const number = b;
+                        //         const answer = c;
+                        //         data[a][b].clue = data[a][b].clue + "✅";
+                        //         alert(data[a][b].clue);
+                        //     } catch (error) {
+                        //         console.log(error)
+                        //     }
+                        // }}
+
+
+                        onLoadedCorrect={(a, b, c) => {
                             console.log(a, b, c);
-                            const direction = a;
-                            const number = b;
-                            const answer = c;
-                            data[a][b].clue = data[a][b].clue + "✅";
-                            alert(data[a][b].clue);
-                        } catch (error) {
-                            console.log(error)
-                        }
-                    }}
+                        }}
 
-
-                    onLoadedCorrect={(a, b, c) => {
-                        console.log(a, b, c);
-                    }}
-
-                />
+                    />
+                </CrosswordWrapper>
             </div>
         )
     }
 }
 
 export default CrossWords;
-
-
-
-// // Example by dreamer01
-// // import React from "react";
-// // import Crossword from "@jaredreisinger/react-crossword";
-
-// // import { initialData } from "../utils/crossword";
-
-// function Crosswords() {
-//     const [data, setData] = React.useState(initialData);
-
-//     const onCorrect = (...values) => {
-//         try {
-//             const [direction, number, answer] = values;
-//             const newData = { ...data };
-//             newData[direction][number].clue = newData[direction][number].clue + " ✅";
-//             setData(newData);
-//         } catch (error) {
-//             console.log(error);
-//         }
-//     };
-
-//     return (
-//         <Crossword
-//             data={data}
-//             onCorrect={onCorrect}
-//             onLoadedCorrect={(a, b, c) => {
-//                 console.log(a, b, c);
-//             }}
-//         />
-//     );
-// }
-
-// export default Crosswords;
