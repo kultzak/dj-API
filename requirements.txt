@@ -1,4 +1,4 @@
 # its included the entire pip installed things because I create a virtualenv
 # including system packages
-Django==3.0.5
+Django==3.0.7
 djangorestframework==3.11.0
